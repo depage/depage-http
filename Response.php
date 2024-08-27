@@ -167,7 +167,7 @@ class Response {
         if (substr($key, 0, 4) == "http") {
             $data = explode(' ', $headerLine, 3);
             $this->httpCode = $data[1];
-            $this->httpMessage = $data[2];
+            $this->httpMessage = $data[2] ?? "";
         } else if ($key == "content-type") {
             preg_match('/([\w\/+]+)(;\s+charset=(\S+))?/i', $value, $matches );
             if (isset($matches[1])) {
