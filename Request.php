@@ -140,8 +140,6 @@ class Request
         $header = substr($response, 0, $info['header_size']);
         $body = substr($response, $info['header_size']);
 
-        curl_close($ch);
-
         return new Response($body, $header, $info);
     }
     // }}}
